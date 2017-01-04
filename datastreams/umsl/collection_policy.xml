@@ -1,0 +1,20 @@
+
+<collection_policy xmlns="http://www.islandora.ca" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="" xsi:schemaLocation="http://www.islandora.ca http://syn.lib.umanitoba.ca/collection_policy.xsd">
+  <content_models>
+    <content_model dsid="" name="Islandora Newspaper Content Model" namespace="umsl" pid="islandora:newspaperCModel"></content_model>
+    <content_model dsid="" name="Islandora Video Content Model" namespace="umsl" pid="islandora:sp_videoCModel"></content_model>
+    <content_model dsid="" name="Islandora Collection Content Model" namespace="umsl" pid="islandora:collectionCModel"></content_model>
+    <content_model dsid="" name="Islandora Newspaper Page Content Model" namespace="umsl" pid="islandora:newspaperPageCModel"></content_model>
+    <content_model dsid="" name="Islandora Page Content Model" namespace="umsl" pid="islandora:pageCModel"></content_model>
+    <content_model dsid="" name="Islandora Large Image Content Model" namespace="umsl" pid="islandora:sp_large_image_cmodel"></content_model>
+    <content_model dsid="" name="Islandora Newspaper Issue Content Model" namespace="umsl" pid="islandora:newspaperIssueCModel"></content_model>
+    <content_model dsid="" name="Islandora Internet Archive Book Content Model" namespace="umsl" pid="islandora:bookCModel"></content_model>
+    <content_model dsid="" name="Islandora EAD Content Model" namespace="umsl" pid="islandora:eadCModel"></content_model>
+    <content_model dsid="" name="Islandora Audio Content Model" namespace="umsl" pid="islandora:sp-audioCModel"></content_model>
+    <content_model dsid="" name="Islandora Basic Image Content Model" namespace="umsl" pid="islandora:sp_basic_image"></content_model>
+    <content_model dsid="" name="Islandora PDF Content Model" namespace="umsl" pid="islandora:sp_pdf"></content_model>
+  </content_models>
+  <search_terms></search_terms>
+  <staging_area></staging_area>
+  <relationship>isMemberOfCollection</relationship>
+</collection_policy>

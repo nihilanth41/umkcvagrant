@@ -1,0 +1,244 @@
+<?php
+
+/**
+ * @file
+ * Hooks for installing/uninstalling the umkc_islandora_vagrant module.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function umkcvagrant_enable() {
+	$module_root = drupal_get_path('module', 'umkcvagrant');
+	
+	// Connect and get repo	
+	$my_islandora_tuque = new IslandoraTuque();
+	$repository = $my_islandora_tuque->repository;
+	
+	// MU 
+	$site = "mu";
+	$pid = $site . ":root";
+	$label = "University of Missouri Digital Library";
+	// Manipulate constructed object
+	$object = $repository->constructObject($pid, 0);
+	$object->label = $label;
+	// Datastreams
+	// Check if DS already exists, otherwise construct it
+	$dsid = "RELS-EXT";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'Fedora Object to Object Relationship Metadata.';
+	$datastream->mimeType = 'application/rdf+xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/rels-ext.rdf", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "COLLECTION_POLICY";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'Collection policy';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/collection_policy.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "DC";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'DC Record';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/dc.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "POLICY";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'XACML Policy Stream';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/xacml_policy.xml", 1);
+	$object->ingestDatastream($datastream);
+	$repository->ingestObject($object);
+	
+	// UMKC
+	$site = "umkc";
+	$pid = $site . ":root";
+	$label = "umkc - All Collections";
+	$object = $repository->constructObject($pid, 0);
+	$object->label = $label;
+	$dsid = "RELS-EXT";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'Fedora Object to Object Relationship Metadata.';
+	$datastream->mimeType = 'application/rdf+xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/rels-ext.rdf", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "COLLECTION_POLICY";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'Collection policy';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/collection_policy.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "DC";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'DC Record';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/dc.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "TN";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'M');
+	$datastream->label = 'Thumbnail';
+	$datastream->mimeType = 'image/jpeg';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/thumbnail.jpg", 1);
+	$object->ingestDatastream($datastream);
+	$repository->ingestObject($object);
+	
+	// UMKC Law
+	$site = "umkclaw";
+	$pid = $site . ":root";
+	$label = "UMKC Law";
+	$object = $repository->constructObject($pid, 0);
+	$object->label = $label;
+	$dsid = "RELS-EXT";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'Fedora Object to Object Relationship Metadata.';
+	$datastream->mimeType = 'application/rdf+xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/rels-ext.rdf", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "COLLECTION_POLICY";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'Collection policy';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/collection_policy.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "MODS";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'M');
+	$datastream->label = 'MODS Record';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/mods.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "DC";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'DC Record';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/dc.xml", 1);
+	$object->ingestDatastream($datastream);
+	$repository->ingestObject($object);
+	
+	// UMKC Scholar
+	$site = "umkcscholar";
+	$pid = $site . ":root";
+	$label = "UMKC Scholar";
+	$object = $repository->constructObject($pid, 0);
+	$object->label = $label;
+	$dsid = "RELS-EXT";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'Fedora Object to Object Relationship Metadata.';
+	$datastream->mimeType = 'application/rdf+xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/rels-ext.rdf", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "COLLECTION_POLICY";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'Collection policy';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/collection_policy.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "MODS";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'M');
+	$datastream->label = 'MODS Record';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/mods.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "DC";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'DC Record';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/dc.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "TN";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'M');
+	$datastream->label = 'Thumbnail';
+	$datastream->mimeType = 'image/jpeg';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/thumbnail.jpg", 1);
+	$object->ingestDatastream($datastream);
+	$repository->ingestObject($object);
+	
+	// UMSL Test Collection
+	// The actual UMSL collection is in a restricted namespace on the default site. 
+	// The actual UMSL collection is a sub-collection of a collection in the islandora namespace (islandora:336).
+	// For clarity the collection in the islandora namespace will be labeled as "UMSL Test"
+	$site = "umsl_test";
+	$pid = "islandora:336";
+	$label = "UMSL Test Collection";
+	$object = $repository->constructObject($pid, 0);
+	$object->label = $label;
+	$dsid = "RELS-EXT";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'Fedora Object to Object Relationship Metadata.';
+	$datastream->mimeType = 'application/rdf+xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/rels-ext.rdf", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "COLLECTION_POLICY";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'Collection policy';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/collection_policy.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "MODS";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'M');
+	$datastream->label = 'MODS Record';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/mods.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "DC";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'DC Record';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/dc.xml", 1);
+	$object->ingestDatastream($datastream);
+	$repository->ingestObject($object);
+	
+	// UMSL
+	$site = "umsl";
+	$pid = $site . ":root";
+	$label = "UMSL";
+	$object = $repository->constructObject($pid, 0);
+	$object->label = $label;
+	$dsid = "RELS-EXT";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'Fedora Object to Object Relationship Metadata.';
+	$datastream->mimeType = 'application/rdf+xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/rels-ext.rdf", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "COLLECTION_POLICY";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'Collection policy';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/collection_policy.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "MODS";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'M');
+	$datastream->label = 'MODS Record';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/mods.xml", 1);
+	$object->ingestDatastream($datastream);
+	$dsid = "DC";
+	$datastream = isset($object[$dsid]) ? $object[$dsid] : $object->constructDatastream($dsid, 'X');
+	$datastream->label = 'DC Record';
+	$datastream->mimeType = 'text/xml';
+	$datastream->setContentFromFile("$module_root/datastreams/$site/dc.xml", 1);
+	$object->ingestDatastream($datastream);
+	$repository->ingestObject($object);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function umkcvagrant_disable() {
+	// Connect and get repo	
+	$my_islandora_tuque = new IslandoraTuque();
+	$repository = $my_islandora_tuque->repository;
+	$pids = array("mu:root", "umkc:root", "umkclaw:root", "umkcscholar:root", "umsl:root", "islandora:336");
+	foreach ($pids as $pid) 
+	{
+		try { 
+			$object = $repository->getObject($pid);
+			$repository->purgeObject($pid);
+		}
+		catch (Exception $e) 
+		{
+			// Failed to load obj. so it's probably already deleted?
+		}
+	}
+}
+
+?>

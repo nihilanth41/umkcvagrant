@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <titleInfo>
+    <title>Collections</title>
+  </titleInfo>
+  <typeOfResource>collection</typeOfResource>
+  <genre authority="marcgt">collection</genre>
+  <location>
+    <physicalLocation>St. Louis Mercantile Library at the University of Missouri-St. Louis</physicalLocation>
+  </location>
+  <accessCondition>Items in the UMSL Digital Library are protected by copyright, with all rights reserved, unless otherwise indicated. The contents of the UMSL Digital Library are made publicly available for use in research, teaching, and private study. Some fees may apply.  Although the nature of archival and manuscript materials sometimes makes it difficult to determine the copyright status of an item, it is the user's responsibility to use them according to all applicable terms. Please contact the contributing partner for additional information regarding copyright status of a particular digital image, text, data set, or sound or video recording.</accessCondition>
+</mods>

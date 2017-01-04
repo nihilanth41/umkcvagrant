@@ -1,0 +1,4 @@
+name = "UMKC Vagrant"
+description = "Make UMKC root pid (umkc:root) for the islandora vagrant environment." 
+dependencies[] = islandora
+core = "7.x"

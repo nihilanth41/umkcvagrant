@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <titleInfo><title>UMKC Scholar</title></titleInfo>
+  <name type="personal"><namePart/><role><roleTerm authority="marcrelator" type="text"/></role></name>
+  <typeOfResource collection="yes"/>
+  <genre authority="lctgm">Collection</genre>
+  <originInfo><dateCreated/></originInfo>
+  <language>
+    <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+  </language>
+  <abstract>UMKC Scholar serves as the institutional repository to preserve and make accessible the scholarly works of UMKC faculty and students. It contains theses and dissertations as well as journal articles, student papers, conference presentations, etc.</abstract>
+  <identifier type="local"/>
+  <physicalDescription><form authority="marcform"/><extent/></physicalDescription>
+  <note/>
+  <accessCondition/>
+  <subject><topic/><geographic/><temporal/><hierarchicalGeographic><continent/><country/><province/><region/><county/><city/><citySection/></hierarchicalGeographic><cartographics><coordinates/></cartographics></subject>
+<name type="corporate" authority="local"><role><roleTerm type="text">School</roleTerm></role><namePart></namePart></name><name type="corporate" authority="local"><role><roleTerm type="text">Department</roleTerm></role><namePart></namePart></name></mods>

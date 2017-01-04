@@ -1,0 +1,19 @@
+
+<collection_policy xmlns="http://www.islandora.ca" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="" xsi:schemaLocation="http://www.islandora.ca http://syn.lib.umanitoba.ca/collection_policy.xsd">
+  <content_models>
+    <content_model dsid="" name="Islandora Audio Content Model" namespace="mu" pid="islandora:sp-audioCModel"></content_model>
+    <content_model dsid="" name="Islandora Video Content Model" namespace="mu" pid="islandora:sp_videoCModel"></content_model>
+    <content_model dsid="" name="Islandora Collection Content Model" namespace="mu" pid="islandora:collectionCModel"></content_model>
+    <content_model dsid="" name="Islandora Newspaper Content Model" namespace="mu" pid="islandora:newspaperCModel"></content_model>
+    <content_model dsid="" name="Islandora Basic Image Content Model" namespace="mu" pid="islandora:sp_basic_image"></content_model>
+    <content_model dsid="" name="Islandora PDF Content Model" namespace="mu" pid="islandora:sp_pdf"></content_model>
+    <content_model dsid="" name="Islandora Compound Object Content Model" namespace="mu" pid="islandora:compoundCModel"></content_model>
+    <content_model dsid="" name="Islandora Page Content Model" namespace="mu" pid="islandora:pageCModel"></content_model>
+    <content_model dsid="" name="Islandora Internet Archive Book Content Model" namespace="mu" pid="islandora:bookCModel"></content_model>
+    <content_model dsid="" name="Islandora Large Image Content Model" namespace="mu" pid="islandora:sp_large_image_cmodel"></content_model>
+    <content_model dsid="" name="Islandora Document Content Model" namespace="mu" pid="islandora:sp_document"></content_model>
+  </content_models>
+  <search_terms></search_terms>
+  <staging_area></staging_area>
+  <relationship>isMemberOfCollection</relationship>
+</collection_policy>

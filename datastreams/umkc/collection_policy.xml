@@ -1,0 +1,33 @@
+
+<collection_policy xmlns="http://www.islandora.ca" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="" xsi:schemaLocation="http://www.islandora.ca http://syn.lib.umanitoba.ca/collection_policy.xsd">
+  <content_models>
+    <content_model dsid="" name="Islandora Audio Content Model" namespace="umkc" pid="islandora:sp-audioCModel"></content_model>
+    <content_model dsid="" name="Islandora Video Content Model" namespace="umkc" pid="islandora:sp_videoCModel"></content_model>
+    <content_model dsid="" name="Islandora Collection Content Model" namespace="umkc" pid="islandora:collectionCModel"></content_model>
+    <content_model dsid="" name="Islandora Newspaper Content Model" namespace="umkc" pid="islandora:newspaperCModel"></content_model>
+    <content_model dsid="" name="Islandora Basic Image Content Model" namespace="umkc" pid="islandora:sp_basic_image"></content_model>
+    <content_model dsid="" name="Islandora PDF Content Model" namespace="umkc" pid="islandora:sp_pdf"></content_model>
+    <content_model dsid="" name="Islandora Compound Object Content Model" namespace="umkc" pid="islandora:compoundCModel"></content_model>
+    <content_model dsid="" name="Islandora Page Content Model" namespace="umkc" pid="islandora:pageCModel"></content_model>
+    <content_model dsid="" name="Islandora Internet Archive Book Content Model" namespace="umkc" pid="islandora:bookCModel"></content_model>
+    <content_model dsid="" name="Islandora Large Image Content Model" namespace="umkc" pid="islandora:sp_large_image_cmodel"></content_model>
+    <content_model dsid="" name="UMKC Book Content Model" namespace="umkc" pid="umkc:bookCModel"></content_model>
+    <content_model dsid="" name="UMKC Video Recordings Content Model" namespace="umkc" pid="umkc:videoCModel"></content_model>
+    <content_model dsid="" name="UMKC Scrapbooks Content Model" namespace="umkc" pid="umkc:scrapbooksCModel"></content_model>
+    <content_model dsid="" name="UMKC Sound Recordings Content Model" namespace="umkc" pid="umkc:soundCModel"></content_model>
+    <content_model dsid="" name="UMKC Sheet Music Content Model" namespace="umkc" pid="umkc:sheetmusicCModel"></content_model>
+    <content_model dsid="" name="UMKC Photographs Content Model" namespace="umkc" pid="umkc:photographsCModel"></content_model>
+    <content_model dsid="" name="UMKC Pamphlets Content Model" namespace="umkc" pid="umkc:pamphletsCModel"></content_model>
+    <content_model dsid="" name="UMKC Newspapers Content Model" namespace="umkc" pid="umkc:newspapersCModel"></content_model>
+    <content_model dsid="" name="UMKC Newsletters Content Model" namespace="umkc" pid="umkc:newslettersCModel"></content_model>
+    <content_model dsid="" name="UMKC Manuscripts Content Model" namespace="umkc" pid="umkc:manuscriptsCModel"></content_model>
+    <content_model dsid="" name="UMKC Maps and Atlases Content Model" namespace="umkc" pid="umkc:mapsandatlasesCModel"></content_model>
+    <content_model dsid="" name="UMKC Posters Content Model" namespace="umkc" pid="umkc:postersCModel"></content_model>
+    <content_model dsid="" name="UMKC Graphics Content Model" namespace="umkc" pid="umkc:graphicsCModel"></content_model>
+    <content_model dsid="" name="UMKC Yearbooks Content Model" namespace="umkc" pid="umkc:yearbooksCModel"></content_model>
+    <content_model dsid="" name="Islandora Document Content Model" namespace="umkc" pid="islandora:sp_document"></content_model>
+  </content_models>
+  <search_terms></search_terms>
+  <staging_area></staging_area>
+  <relationship>isMemberOfCollection</relationship>
+</collection_policy>
